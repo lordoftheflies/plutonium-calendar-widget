@@ -1,0 +1,123 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<link rel="import" href="../paper-radio-group/paper-radio-group.html">
+<link rel="import" href="../paper-radio-button/paper-radio-button.html">
+<link rel="import" href="../paper-button/paper-button.html">
+<link rel="import" href="../iron-ajax/iron-ajax.html">
+<link rel="import" href="../iron-pages/iron-pages.html">
+<link rel="import" href="../iron-flex-layout/iron-flex-layout-classes.html">
+
+<link rel="import" href="../iron-icons/iron-icons.html">
+<link rel="import" href="../paper-icon-button/paper-icon-button.html">
+<link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../paper-menu/paper-menu.html">
+<link rel="import" href="../paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../paper-toast/paper-toast.html">
+
+<link rel="import" href="../fullcalendar-calendar/fullcalendar-theme.html">
+<link rel="import" href="../fullcalendar-calendar/fullcalendar-calendar.html">
+
+<!--
+`plutonium-calendar-widget`
+Widget for displaying scheduling data in a calendar based view.
+
+@demo demo/index.html 
+-->
+
+<dom-module id="plutonium-calendar-widget">
+
+
+
+    <template>
+        <style include="iron-flex">
+            :host {
+                display: inline-block;
+                width: 100%;
+            }
+
+            .actions { display: flex; justify-content: space-between; align-items: center; }
+        </style>
+
+        <div class="actions">
+            <paper-button on-tap="onSetToday" raised>Today</paper-button>
+            
+            <div>[[title]]</div>
+
+            <div>
+                <paper-menu-button>
+                    <paper-icon-button icon="event" class="dropdown-trigger"></paper-icon-button>
+                    <paper-menu class="dropdown-content" selected="0">
+                        <paper-item view="month" on-tap="changeView">Month</paper-item>
+                        <paper-item view="basicWeek" on-tap="changeView">Basic week</paper-item>
+                        <paper-item view="basicDay" on-tap="changeView">Basic day</paper-item>
+                        <paper-item view="agendaWeek" on-tap="changeView">Agenda week</paper-item>
+                        <paper-item view="agendaDay" on-tap="changeView">Agenda day</paper-item>
+                    </paper-menu>
+                </paper-menu-button>
+
+                <paper-icon-button id="previous" icon="chevron-left" on-transitionend="previous"></paper-icon-button>
+                <paper-icon-button id="next" icon="chevron-right" on-transitionend="next"></paper-icon-button>
+            </div>
+        </div>
+
+        <fullcalendar-calendar
+            id="calendar"
+            options="[[options]]"
+            view="{{view}}"
+            on-view-render="setTitle"
+            on-day-click="notifyDayClick">
+        </fullcalendar-calendar>
+
+        <paper-toast id="notification"></paper-toast>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'plutonium-calendar-widget',
+            properties: {
+                options: {
+                    type: Object,
+                    notify: true,
+                    value: {
+                        header: false,
+                        events: [
+                            {title: 'Discover fullcalendar-calendar', start: moment()},
+                            {title: 'Install fullcalendar-calendar', start: moment().add(2, 'day')},
+                            {title: 'Play around with fullcalendar-calendar', start: moment().add(4, 'days'), end: moment().add(5, 'days')},
+                            {title: 'Star fullcalendar-calendar on Github', start: moment().add(7, 'days'), end: moment().add(7, 'days').add(25, 'minutes')}
+                        ]
+                    }
+                }
+            },
+            ready: function () {
+                console.debug(this.is, 'ready');
+            },
+            changeView: function (event) {
+                var view = event.target.attributes.getNamedItem('view').value;
+                this.$.calendar.changeView(view);
+                console.debug(this.is, 'change-view', view);
+            },
+            previous: function () {
+                this.$.calendar.previous();
+                console.debug(this.is, 'previous');
+            },
+            next: function () {
+                this.$.calendar.next();
+                console.debug(this.is, 'next');
+            },
+            notifyDayClick: function (event) {
+                this.$.notification.setAttribute('text', 'You clicked on: ' + event.detail.date.format());
+                this.$.notification.open();
+                console.debug(this.is, 'notify-day-click');
+            },
+            setTitle: function (event) {
+                this.title = event.detail.view.title;
+                console.debug(this.is, 'set title', this.title);
+            },
+            onSetToday: function (event) {
+                this.$.calendar.today();
+                console.debug(this.is, 'set today');
+            }
+        });
+    </script>
+</dom-module>
