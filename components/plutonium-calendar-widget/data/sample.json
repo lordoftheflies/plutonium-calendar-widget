@@ -1,0 +1,28 @@
+{
+    "entries": [
+        { "key": "00:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 3}] },
+        { "key": "01:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "02:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "03:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "04:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "05:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "06:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "07:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "08:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "09:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "10:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "11:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "12:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "13:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "14:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "15:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "16:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "17:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "18:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "19:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "20:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "21:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "22:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] },
+        { "key": "23:00", "data": [{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1},{ "data": null, "span": 1}] }
+    ]
+}
