@@ -40,7 +40,7 @@ Widget for displaying scheduling data in a calendar based view.
 
         <div class="actions">
             <paper-button on-tap="onSetToday" raised>Today</paper-button>
-            
+
             <div>[[title]]</div>
 
             <div>
@@ -87,6 +87,14 @@ Widget for displaying scheduling data in a calendar based view.
                             {title: 'Star fullcalendar-calendar on Github', start: moment().add(7, 'days'), end: moment().add(7, 'days').add(25, 'minutes')}
                         ]
                     }
+                },
+                view: {
+                    type: String,
+                    notify: true
+                },
+                title: {
+                    type: String,
+                    notify: true
                 }
             },
             ready: function () {
@@ -118,7 +126,6 @@ Widget for displaying scheduling data in a calendar based view.
                 this.$.calendar.today();
                 console.debug(this.is, 'set today');
             },
-            
             /**
              * TODO: add new event polymer-event
              */
